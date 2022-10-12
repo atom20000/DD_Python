@@ -2,7 +2,6 @@ from dataclasses import dataclass
 import faker
 import random
 
-from numpy import percentile
 
 PERKS = [
     'Black Widow',
