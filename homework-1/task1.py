@@ -8,10 +8,13 @@ def calculate():
         and oper not in ('+', '-', '*', '/', '**', '%', 'radical'):
         print('Error')
     else:
-        if (num2 := input('второе число\n')) and num2.isdigit() and int(num2) != 0:
-            if oper == 'radical':
+        if (num2 := input('второе число\n')) and num2.isdigit():
+            if oper == 'radical' and int(num2) != 0:
                 print(f'{num2}\u221A{num1} = {int(num1) ** (1 / int(num2))}')
             else:
+                if oper == '/' and int(num2) == 0:
+                    print('Error')
+                    return
                 expr = ' '.join((num1, oper, num2))
                 print(f'{expr} = {eval(expr)}')
         else:
