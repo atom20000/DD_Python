@@ -19,6 +19,9 @@ class Republic():
         return [self.__getattribute__(i)[0] for i in self.__dir__()[1:8] if self.__getattribute__(i)[1] == value]
 
 def generate_stat(count):
+    if not count.isdigit():
+        print('Вы ввели не число')
+        return
     republics = [Republic() for i in range(count)]
     find_lst = lambda v: [j for i in map(lambda x: x.find_industries(v), republics) for j in i]
     find_max = lambda lst: max([(i, lst.count(i)) for i in set(lst)], key= lambda x: x[1])
