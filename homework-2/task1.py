@@ -35,5 +35,7 @@ def generate_stat(count):
     stat_all_industries_lag_adv = [(i, all_industries_lag_adv.count(i)) for i in set(all_industries_lag_adv)]
     for i in stat_all_industries_lag_adv:
         print(f'Статистика по отрасли "{i[0]}", значение {i[1]}')
+
+
 if __name__ == '__main__':
     generate_stat(4)
